@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>code</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article class="mjr">
+      <section><img src="images/code.png" class="mjr__img mjr__img--mw500 marginBottom20">
+        <h3> Australia's Professional JavaScript &<br />Front End Engineering Conference</h3>
+      </section>
+      <section><img src="images/code.png" class="mjr__img mjr__img--mw150 marginBottom20">
+        <ul>
+          <li>JavaScript</li>
+          <li>advanced CSS</li>
+          <li>Web Platform APIs</li>
+          <li>security</li>
+          <li>scalability</li>
+          <li>performance</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Alex Russel - What comes next for the Web Platform?</h3>
+        <h3>Rachel Nabors - State of the animation</h3>
+        <h3>Mark Dalgliesh - Dawn of the Progressive Single Page App</h3>
+        <h3>Mark Nottingham - What does HTTP/2 mean for Front End Engineers?</h3>
+        <h3>Simon Swain - Canvas Cold War</h3>
+      </section>
+      <section class="white">
+        <h2 class="nomargin">What comes next for the Web Platform?</h2>
+        <h3>Alex Russel</h3>
+        <hr>
+        <p>Software engineer for google working on chrome and blink, involved with web standards and is a member of tc39</p>
+        <p><small>(Ecma International, Technical Committee 39)</small></p>
+      </section>
+      <section>
+        <h2>It's Mobile... but</h2>
+        <ul>
+          <li>comparatively low levels of engagement on mobile</li>
+          <li>80% of time online spent using native applications</li>
+          <li>long loading times and dodgy responsive implementations</li>
+        </ul>
+      </section>
+      <section><img src="images/responsive.png" class="mjr__img mjr__img--mw400"></section>
+      <section>
+        <h2>It's not all bad</h2>
+        <ul>
+          <li>users more willing to explore new websites than apps</li>
+          <li>distinct advantage in the ecommerce space</li>
+          <li>zero friction (no installation step)</li>
+        </ul>
+        <ul> 
+          <li>we can now start creating app like experiences on the web</li>
+          <li>push notifications / offline content / home screen access</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Progressive Apps</h2>
+        <ul> 
+          <li>https</li>
+          <li>offline content (using service workers)</li>
+          <li>manifest.json</li>
+          <li>responsive</li>
+        </ul>
+        <ul>
+          <li>chrome will prompt user to add to home screen</li>
+          <li>launch full screen / top level activity in your os</li>
+        </ul>
+      </section>
+      <section class="white">
+        <h2 class="nomargin">State of the animation</h2>
+        <h3>Rachel Nabors</h3>
+        <hr>
+        <p>Cartoonist turned front end developer, Gave up full time work to focus solely on animation</p>
+      </section>
+      <section>
+        <h2 class="nomargin">Web Animation API</h2><small class="marginBottom20">for css & svg animations</small>
+        <ul>
+          <li>performant animations</li>
+          <li>motion paths</li>
+          <li>callbacks</li>
+          <li>nesting / sequencing</li>
+          <li>pause / play / reverse etc.</li>
+        </ul>
+      </section>
+      <section>
+        <h2 class="nomargin">Web Animation API</h2><small class="marginBottom20">for css & svg animations</small>
+        <ul>
+          <li>chrome / firefox partial support</li>
+          <li>ie under consideration</li>
+          <li>safari :(</li>
+        </ul>
+        <ul> 
+          <li>https://birtles.github.io/areweanimatedyet/</li>
+          <li>polyfills available but current js libs out perform them</li>
+        </ul>
+      </section>
+      <section>
+        <h2>CSS animations</h2>
+        <ul>
+          <li>csstriggers.com</li>
+          <li>opacity / transform remain the safest bet when animating</li>
+        </ul>
+        <pre><code class="language-css">/* use instead of translateZ(0) for chrome and firefox */
+.element {
+  will-change: transform, opacity;
+}
+</code></pre>
+      </section>
+      <section>
+        <h2>JavaScript animations</h2>
+        <ul>
+          <li>greensock (gsap)</li>
+          <li>velocity</li>
+        </ul>
+      </section>
+      <section class="white">
+        <h2 class="nomargin">Dawn of the Progressive Single Page App</h2>
+        <h3>Mark Dalgliesh</h3>
+        <hr>
+        <p>Senior ui developer at Seek</p>
+      </section>
+      <section>
+        <h2>Progressive Enhancement</h2>
+        <ul>
+          <li>Hackathon Idea, now in development</li>
+          <li>Render Seek UI without the need for JavaScript on the front end</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Motivation</h2>
+        <ul>
+          <li>Not aimed directly at users who have disabled JavaScript</li>
+          <li>All users are non JavaScript users while an application is loading</li>
+          <li>Deliver content without the need for an entire application to be loaded</li>
+          <li>suits large public facing applications</li>
+        </ul>
+        <ul> 
+          <li>time to first tweet was a massive problem at twitter 2meg SPA</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Approach</h2>
+        <ul>
+          <li>React (React Router, Server Side Rendering)</li>
+          <li>Resolves route, then sends down the view as a template string</li>
+          <li>Query strings used to track app state prior to loading</li>
+          <li>checkboxes to enable micro interactions</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Example Form</h2>
+        <ul> 
+          <li>method / action will create the query string</li>
+          <li>submit handler will prevent default behaviour once the app is loaded</li>
+        </ul>
+        <pre><code class="language-markup">&lt;form method='get'
+      action='/results'
+      onSubmit={this.onSubmit.bind(this)}>
+      </code></pre>
+      </section>
+      <section class="white">
+        <h2 class="nomargin">What does HTTP/2 mean for Front End Engineers?</h2>
+        <h3>Mark Nottingham</h3>
+        <hr>
+        <p>Chair of the IETF HTTP Working Group and has been closely involved in the development of HTTP/2</p>
+      </section>
+      <section>
+        <h2>HTTP/2?</h2>
+        <ul>
+          <li>a major revision of the Web's protocol</li>
+        </ul>
+        <h2>differences</h2>
+        <ul>
+          <li>is binary, instead of textual</li>
+          <li>is fully multiplexed, instead of ordered and blocking</li>
+          <li>uses a single connection per origin</li>
+          <li>uses header compression to reduce overhead</li>
+          <li>allows servers to proactively push responses into client caches</li>
+        </ul>
+      </section>
+      <section>
+        <h2>What does this mean</h2>
+        <ul>
+          <li>improved network utilisation</li>
+          <li>less work for browser to figure out when/where to send requests</li>
+          <li>HTTP APIs, headers, methods and status codes remain the same</li>
+          <li>15% improvement with no optimisation</li>
+        </ul>
+      </section>
+      <section>
+        <h2>what does it mean on the front end</h2>
+        <ul>
+          <li>reduce request minimisation techniques</li>
+          <li>e.g. spriting / inlining / concatenation</li>
+        </ul>
+        <h2>supported browsers</h2>
+        <ul>
+          <li>IE11, Firefox 37+, Chrome 41+, Safari 9 and Opera 29+</li>
+        </ul>
+      </section>
+      <section class="white">
+        <h2 class="nomargin">Canvas Cold War</h2>
+        <h3>Simon Swain</h3>
+        <hr>
+        <p><a href="https://simonswain.com/coldwar" target="_blank" class="white">https://simonswain.com/coldwar</a></p>
+      </section>
+      <section class="white">
+        <h3>Web Directions 2015</h3>
+        <hr>
+        <p><a href="http://www.webdirections.org/wd15/" target="_blank" class="white">http://www.webdirections.org/wd15/</a></p>
+      </section>
+    </article>
+  </body>
+  <script src="build/build.js"></script>
+</html>
