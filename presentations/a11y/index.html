@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>a11y</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article class="mjr">
+      <section>
+        <h1>Accessible Angular Applications</h1><img src="images/angular.png" class="mjr__img mjr__img--angular">
+        <h2 class="smallmargin">Michael Richardson</h2><img src="images/odecee.png" class="mjr__img mjr__img--od">
+      </section>
+      <section>
+        <h1>Angular?</h1>
+        <ul>
+          <li>JavaScript framework for building web applications</li>
+          <li>Lets you extend html to express your applications components</li>
+        </ul>
+      </section>
+      <section>
+        <h1>Angular + A11y?</h1>
+        <p>is not that hard * **</p>
+        <ul data-bespoke-bullet>
+          <li data-bespoke-bullet class="nopadding"><i><small>*  Application design is not too crazy.</small></i></li>
+          <li data-bespoke-bullet class="nopadding"><i><small>** Not supporting ie8</small></i></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Challenges</h1>
+        <ul>
+          <li>Remembering the basics</li>
+          <li>Managing Focus</li>
+          <li>Handling Alerts</li>
+        </ul>
+      </section>
+      <section>
+        <h1>Remembering The Basics</h1>
+        <ul>
+          <li><!--Extensible nature of angular opens you up to new problems-->
+            <pre><code class="language-markup">&lt;!-- bad, no focus -->
+&lt;a ng-click="doSomething()">Sample&lt;/a></code></pre>
+            <pre><code class="language-markup">&lt;!-- good, can focus -->
+&lt;a href="#" ng-click="doSomething()">Sample&lt;/a>
+&lt;a tabindex="0" ng-click="doSomething()">Sample&lt;/a></code></pre>
+            <pre><code class="language-markup">&lt;!-- better, focus for free -->
+&lt;button ng-click="doSomething()">Sample&lt;/button></code></pre>
+          </li>
+          <li>Evaluate plugins before you implement them</li>
+        </ul>
+      </section>
+      <section>
+        <h1>Managing Focus</h1>
+        <ul>
+          <li>Some native behavoir is lost</li>
+          <li>Focus is inconsistent between views</li>
+          <li>Need for greater control</li>
+        </ul>
+        <pre><code class="language-markup">&lt;!-- Focus When Directive -->
+&lt;h1 focus-when="loaded === true">Heading&lt;/h1></code></pre><a href="http://localhost/~michaelrichardson/angularTest/#/focus" target="_blank" class="btn">demo</a>
+      </section>
+      <section>
+        <h1>Handing Alerts</h1>
+        <ul>
+          <li>Dynamic alerts, validation etc.</li>
+          <li>Directives such as ng-if & ng-switch need consideration</li>
+          <li>Use live regions</li>
+          <pre><code class="language-markup">&lt;!-- Live Regions -->
+&lt;div aria-live="assertive">
+  &lt;div class="well" ng-if="main.alertAriaA === true">
+    &lt;p>This is an Alert with a live region - Assertive&lt;/p>
+  &lt;/div>
+&lt;/div></code></pre>
+        </ul><a href="http://localhost/~michaelrichardson/angularTest/" target="_blank" class="btn">demo</a>
+      </section>
+      <section>
+        <ul>
+          <li>Test and review regularly</li>
+          <li>Ensure ideas are aligned</li>
+          <li>Include from the start, don't retrofit!</li>
+        </ul>
+      </section>
+      <section>
+        <h1>Thanks!</h1>
+        <h3 class="nomargin">mjrichardson@odecee.com.au </h3>
+        <h3 class="nomargin">@mikrich</h3>
+      </section>
+    </article>
+  </body>
+  <script src="build/build.js"></script>
+</html>
