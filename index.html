@@ -16,33 +16,49 @@
     }
     ul {
       list-style: none;
+      display: flex;
+      justify-content: space-around;
+
+      width: 200px;
+      padding: 5px 0;
+      border-top: 1px solid #cccccc;
+      border-bottom: 1px solid #cccccc;
     }
     img	{
       width: 150px;
       height: 150px;
+      display: block;
     }
-    section {
+    main {
       display: flex;
-      height: 100%;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 100%;
+    }
+
+    section {
+      text-align: center;
+      margin: 0 0 10px;
     }
   </style>
 </head>
 <body>
-  <section>
-    <div>
+  <main>
+    <section>
       <img src="logo.png" alt="MJR" />
-    </div>
-    <div>
+    </section>
+    <section>
       <h1>Michael J Richardson</h1>
       <p>Front End Development Lead</p>
+    </section>
+    <section>
       <ul>
         <li><a href="https://www.linkedin.com/in/michael-richardson-643a8910/" target="_blank">Linkedin</a></li>
         <li><a href="https://github.com/mikrich" target="_blank">Github</a></li>
         <li><a href="https://twitter.com/mikrich" target="_blank">Twitter</a></li>
       </ul>
-    </div>
-  </section>
+    </section>
+  </main>
 </body>
 </html>
